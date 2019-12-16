@@ -1,4 +1,15 @@
 from board import Board
+from constants import (output_route)
+
+def clear_output_file():
+    f = open(output_route, "w")
+    f.write("")
+    f.close()
+
+def write_to_file(str):
+    f = open(output_route, "a")
+    f.write(str)
+    f.close()
 
 def copy_array(array):
     return [[array[x][y] for y in range(len(array[0]))] for x in range(len(array))]
@@ -86,7 +97,7 @@ def solve(y):
             solve(y+1)
             # when we finish the recursive call we set the value to 0 again
             aux_array[i][y] = 0
-    return False
+    return True
 
 
 n = 8
@@ -103,3 +114,6 @@ solve(0)
 print(f"solutions: {solutions}")
 for board in board_list:
     board.print_array()
+
+clear_output_file()
+write_to_file("Hello World")

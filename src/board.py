@@ -35,6 +35,9 @@ class Board:
 
         print("")
 
+    def to_string():
+        pass
+
     # writes a queen (1) at a certain position (x, y)
     def place_queen_at(self, x, y):
         if self.in_bounds(x, y):
