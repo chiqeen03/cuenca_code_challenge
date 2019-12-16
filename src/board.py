@@ -1,7 +1,7 @@
 class Board:
-    def __init__(self, n):
-        self.n = n
-        self.array = self.fill_empty_array()
+    def __init__(self, array):
+        self.array = array
+        self.n = len(array)
 
     # returns an array filled with "0"
     def fill_empty_array(self):
