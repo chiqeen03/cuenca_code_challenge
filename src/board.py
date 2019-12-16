@@ -14,7 +14,7 @@ class Board:
         
         nm = "  y "
         for i in range(n):
-            nm += str(i) + " "
+            nm += f"{i} "
         print (nm)
 
         line = "x  -"
@@ -26,17 +26,44 @@ class Board:
         print(line)
 
         for i in range(n):
-            rw = str(i) + " | "
+            rw = f"{i} | "
             if n >= 10 and i <= 9:
-                rw = str(i) + "  | "
+                rw = f"{i}  | "
             for j in range(n):
-                rw += str(array[i][j]) + " "
+                rw += f"{array[i][j]} "
             print (rw)
 
         print("")
 
-    def to_string():
-        pass
+    def to_string(self):
+        n = self.n
+        array = self.array
+        array_to_string = ""
+
+        nm = "  y "
+        for i in range(n):
+            nm += f"{i} "
+        array_to_string+= f"{nm}\n"
+
+        line = "x  -"
+        for i in range(n):
+            if(i != n-1):
+                line += "--"
+            else:
+                line += "-"
+        array_to_string += f"{line}\n"
+
+        for i in range(n):
+            rw = f"{i} | "
+            if n >= 10 and i <= 9:
+                rw = f"{i}  | "
+            for j in range(n):
+                rw += f"{array[i][j]} "
+            array_to_string += f"{rw}\n"
+        
+        array_to_string += "\n"
+
+        return array_to_string
 
     # writes a queen (1) at a certain position (x, y)
     def place_queen_at(self, x, y):
