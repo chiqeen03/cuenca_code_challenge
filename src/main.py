@@ -111,9 +111,11 @@ solutions = 0
 
 solve(0)
 
-print(f"solutions: {solutions}")
+clear_output_file()
+write_to_file(f"for n = {n}, solutions = {solutions}\n\n")
+
+print(f"for n = {n}, solutions = {solutions}\n")
 for board in board_list:
     board.print_array()
-
-clear_output_file()
-write_to_file("Hello World")
+    write_to_file(board.to_string())
+    
