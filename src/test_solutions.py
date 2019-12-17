@@ -1,5 +1,6 @@
 import pytest
-from src.main import *
+from queens import get_all_possible_solutions
 
 def test_testing():
-    assert 1 == 1
+    solutions = get_all_possible_solutions(8) 
+    assert len(solutions) == 92
