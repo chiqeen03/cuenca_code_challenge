@@ -10,7 +10,7 @@ from sqlalchemy import (
 n = 8
 solutions = get_all_possible_solutions(n)
 
-engine = create_engine('postgresql+psycopg2://user:123456@db/db_queens')
+engine = create_engine('postgresql+psycopg2://user:123456@db/queens')
 connection = engine.connect()
 metadata = db.MetaData()
 
