@@ -66,3 +66,5 @@ class Board:
             return self.array[x][y]
         return -1
     
+    def for_test():
+        return 1
