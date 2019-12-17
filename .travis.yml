@@ -8,7 +8,9 @@ python:
     - "3.8-dev"
 
 install:
-    - pip install pytest 
+    - pip install pytest
+    - pip install sqlalchemy
+    - pip install psycopg2
 
 script:
     - pytest
