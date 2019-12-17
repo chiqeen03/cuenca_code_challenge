@@ -5,17 +5,18 @@ from sqlalchemy import (
     Table
 )
 
-n = 10
+n = 8
 solutions = get_all_possible_solutions(n)
 
-engine = create_engine('postgresql://localhost/testdb')
+engine = create_engine('postgresql://localhost/queens')
 connection = engine.connect()
 metadata = db.MetaData()
 
-test_table = Table('test_table', metadata, db.Column('test_id', db.Integer(), db.Sequence('id'), primary_key=True), db.Column('test_string', db.String(25), nullable=False))
+solutions_table = Table('solutions', metadata, db.Column('id', db.Integer(), db.Sequence('id'), primary_key=True), db.Column('simple_solution_string', db.String(15), nullable=False))
 
-test_table.drop(engine)
-test_table.create(engine)
+solutions_table.drop(engine, checkfirst=True)
+solutions_table.create(engine)
 
-query = db.insert(test_table).values(test_string = "Bye World")
-connection.execute(query)
+for solution in solutions:
+    query = db.insert(solutions_table).values(simple_solution_string = solution.to_simple_string())
+    connection.execute(query)
