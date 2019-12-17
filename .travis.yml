@@ -7,5 +7,8 @@ python:
     - "3.8"
     - "3.8-dev"
 
+install:
+    - pip install pytest 
+
 script:
     - pytest
