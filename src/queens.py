@@ -1,17 +1,5 @@
 from board import Board
 
-output_route = "output.txt"
-
-def clear_output_file():
-    f = open(output_route, "w")
-    f.write("")
-    f.close()
-
-def write_to_file(str):
-    f = open(output_route, "a")
-    f.write(str)
-    f.close()
-
 def copy_array(array):
     return [[array[x][y] for y in range(len(array[0]))] for x in range(len(array))]
 
@@ -104,13 +92,5 @@ def get_all_possible_solutions(n):
     aux_array = empty_array(n)
 
     solve(aux_array, 0, n, board_list)
-
-    clear_output_file()
-    write_to_file(f"for n = {n}, solutions = {len(board_list)}\n\n")
-
-    print(f"for n = {n}, solutions = {len(board_list)}\n")
-    for board in board_list:
-        board.print_array()
-        write_to_file(board.to_string())
 
     return board_list
