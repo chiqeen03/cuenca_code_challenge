@@ -10,13 +10,12 @@ from sqlalchemy import (
 n = 8
 solutions = get_all_possible_solutions(n)
 
-engine = create_engine('postgresql://localhost/queens')
+engine = create_engine('postgresql+psycopg2://user:123456@db/db_queens')
 connection = engine.connect()
 metadata = db.MetaData()
 
 solutions_table = Table('solutions', metadata, db.Column('id', db.Integer(), db.Sequence('id'), primary_key=True), db.Column('simple_solution_string', db.String(15), nullable=False))
 
-solutions_table.drop(engine, checkfirst=True)
 solutions_table.create(engine)
 
 for solution in solutions:

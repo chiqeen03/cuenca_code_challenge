@@ -2,3 +2,4 @@
 /tests/__pycache__/
 /.cache/
 /__pycache__/
+/postgres-data/
