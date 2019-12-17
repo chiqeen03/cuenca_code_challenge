@@ -16,8 +16,10 @@ metadata = db.MetaData()
 
 solutions_table = Table('solutions_table', metadata, db.Column('id', db.Integer(), db.Sequence('id'), primary_key=True), db.Column('simple_solution_string', db.String(15), nullable=False))
 
+solutions_table.drop(engine, checkfirst=True)
 solutions_table.create(engine)
 
 for solution in solutions:
+    print(solution.to_string())
     query = db.insert(solutions_table).values(simple_solution_string = solution.to_simple_string())
     connection.execute(query)
