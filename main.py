@@ -20,6 +20,15 @@ solutions_table.drop(engine, checkfirst=True)
 solutions_table.create(engine)
 
 for solution in solutions:
-    print(solution.to_string())
+    # uncomment this line to see the raw output
+    # print(solution.to_string())
     query = db.insert(solutions_table).values(simple_solution_string = solution.to_simple_string())
     connection.execute(query)
+
+# comment in here if you want to see the raw output
+query = db.select([census])
+ResultProxy = connection.execute(query)
+ResultSet = ResultProxy.fetchall()
+
+for row in ResultSet:
+    print(row)
