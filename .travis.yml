@@ -9,8 +9,6 @@ python:
 
 install:
     - pip install pytest
-    - pip install sqlalchemy
-    - pip install psycopg2
 
 script:
     - pytest

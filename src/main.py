@@ -1,3 +1,5 @@
+# tutorial followed for sql: https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91
+
 from queens import get_all_possible_solutions
 import sqlalchemy as db
 from sqlalchemy import (
