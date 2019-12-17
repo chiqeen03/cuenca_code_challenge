@@ -1,3 +1,4 @@
 from queens import get_all_possible_solutions
 
-solutions = get_all_possible_solutions(8)
+n = 10
+solutions = get_all_possible_solutions(n)
