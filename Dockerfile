@@ -12,8 +12,8 @@ RUN apt-get install -y python-psycopg2
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./src/board.py ./
-COPY ./src/queens.py ./
-COPY ./src/main.py ./
+COPY ./board.py ./
+COPY ./queens.py ./
+COPY ./main.py ./
 
-CMD python /src/main.py
+CMD python main.py
