@@ -14,7 +14,7 @@ engine = create_engine('postgresql+psycopg2://user:123456@db/queens')
 connection = engine.connect()
 metadata = db.MetaData()
 
-solutions_table = Table('solutions', metadata, db.Column('id', db.Integer(), db.Sequence('id'), primary_key=True), db.Column('simple_solution_string', db.String(15), nullable=False))
+solutions_table = Table('solutions_table', metadata, db.Column('id', db.Integer(), db.Sequence('id'), primary_key=True), db.Column('simple_solution_string', db.String(15), nullable=False))
 
 solutions_table.create(engine)
 
