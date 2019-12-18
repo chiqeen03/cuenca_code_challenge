@@ -7,11 +7,11 @@ Until now this code is able to:
 * Connect to a local db to store values
 * Build in docker
 
-###Requirements
+### Requirements
 * Docker
 * Docker-Compose
 
-###Steps to run code
+### Steps to run code
 1. Clone this repository
 2. Run the comand ```sudo docker-compose up -d --build``` to build the image and containers
 3. Run the comand ```sudo docker-compose run main_app python main.py db queens```to instantiate the containers
