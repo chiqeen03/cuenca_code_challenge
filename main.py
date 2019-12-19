@@ -26,7 +26,7 @@ for solution in solutions:
     connection.execute(query)
 
 # comment in here if you want to see the raw output
-query = db.select([census])
+query = db.select([solutions_table])
 ResultProxy = connection.execute(query)
 ResultSet = ResultProxy.fetchall()
 
